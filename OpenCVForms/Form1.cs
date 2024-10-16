@@ -248,7 +248,6 @@ namespace OpenCVForms
             kernel[0, 7, 0, 1] = Mat.Ones(new OpenCvSharp.Size(1, 7), MatType.CV_8U);
             kernel[0, 1, 0, 7] = Mat.Ones(new OpenCvSharp.Size(7, 1), MatType.CV_8U);
 
-<<<<<<< HEAD
             Cv2.MorphologyEx(grayImage, hitMissImage, MorphTypes.HitMiss, kernel, iterations:10);
 
             pictureBoxImage.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(hitMissImage);
@@ -256,14 +255,6 @@ namespace OpenCVForms
             grayImage.Dispose();
             hitMissImage.Dispose();
             kernel.Dispose();
-=======
-            Cv2.MorphologyEx(grayImage, closeImage, MorphTypes.HitMiss, kernel, iterations: 10);
-
-            pictureBoxImage.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(closeImage);
-
-            kernel.Dispose();
-            closeImage.Dispose();
-            grayImage.Dispose();
         }
         #endregion
 
@@ -282,7 +273,6 @@ namespace OpenCVForms
 
             dst.Dispose();
             grayImage.Dispose();
->>>>>>> f7b27511d85dae4b25e7311a0683553db972efe7
         }
         #endregion
 
