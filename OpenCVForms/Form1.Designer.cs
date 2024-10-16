@@ -30,168 +30,167 @@
         {
             pictureBoxImage = new PictureBox();
             LoadBtn = new Button();
-            RevertButton = new Button();
-            GrayButton = new Button();
-            DilationButton = new Button();
-            ErosionButton = new Button();
-            OpenButton = new Button();
-            CloseButton = new Button();
-            GradientButton = new Button();
-            TopHatButton = new Button();
-            BlackHatButton = new Button();
-            HitMissButton = new Button();
+            revertButton = new Button();
+            grayButton = new Button();
+            dilationButton = new Button();
+            erosionButton = new Button();
+            openButton = new Button();
+            closeButton = new Button();
+            gradientButton = new Button();
+            topHatButton = new Button();
+            blackHatButton = new Button();
+            hitMissButton = new Button();
+            sobelDerivativeButton = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBoxImage).BeginInit();
             SuspendLayout();
             // 
             // pictureBoxImage
             // 
-            pictureBoxImage.Location = new Point(17, 11);
-            pictureBoxImage.Margin = new Padding(2);
+            pictureBoxImage.Location = new Point(24, 18);
             pictureBoxImage.Name = "pictureBoxImage";
-            pictureBoxImage.Size = new Size(600, 342);
+            pictureBoxImage.Size = new Size(857, 570);
             pictureBoxImage.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxImage.TabIndex = 0;
             pictureBoxImage.TabStop = false;
             // 
             // LoadBtn
             // 
-            LoadBtn.Location = new Point(878, 11);
-            LoadBtn.Margin = new Padding(2);
+            LoadBtn.Location = new Point(1254, 18);
             LoadBtn.Name = "LoadBtn";
-            LoadBtn.Size = new Size(78, 20);
+            LoadBtn.Size = new Size(111, 33);
             LoadBtn.TabIndex = 1;
             LoadBtn.Text = "load btn";
             LoadBtn.UseVisualStyleBackColor = true;
             LoadBtn.Click += LoadBtn_Click;
             // 
-            // RevertButton
+            // revertButton
             // 
-            RevertButton.Location = new Point(878, 35);
-            RevertButton.Margin = new Padding(2);
-            RevertButton.Name = "RevertButton";
-            RevertButton.Size = new Size(78, 20);
-            RevertButton.TabIndex = 2;
-            RevertButton.Text = "revert";
-            RevertButton.UseVisualStyleBackColor = true;
-            RevertButton.Click += RevertButton_Click;
+            revertButton.Location = new Point(1254, 58);
+            revertButton.Name = "revertButton";
+            revertButton.Size = new Size(111, 33);
+            revertButton.TabIndex = 2;
+            revertButton.Text = "revert";
+            revertButton.UseVisualStyleBackColor = true;
+            revertButton.Click += RevertButton_Click;
             // 
-            // GrayButton
+            // grayButton
             // 
-            GrayButton.Location = new Point(878, 59);
-            GrayButton.Margin = new Padding(2);
-            GrayButton.Name = "GrayButton";
-            GrayButton.Size = new Size(78, 20);
-            GrayButton.TabIndex = 3;
-            GrayButton.Text = "gray";
-            GrayButton.UseVisualStyleBackColor = true;
-            GrayButton.Click += SetGrayButton_Click;
+            grayButton.Location = new Point(1254, 98);
+            grayButton.Name = "grayButton";
+            grayButton.Size = new Size(111, 33);
+            grayButton.TabIndex = 3;
+            grayButton.Text = "gray";
+            grayButton.UseVisualStyleBackColor = true;
+            grayButton.Click += SetGrayButton_Click;
             // 
-            // DilationButton
+            // dilationButton
             // 
-            DilationButton.Location = new Point(878, 135);
-            DilationButton.Margin = new Padding(2);
-            DilationButton.Name = "DilationButton";
-            DilationButton.Size = new Size(78, 20);
-            DilationButton.TabIndex = 4;
-            DilationButton.Text = "dilation";
-            DilationButton.UseVisualStyleBackColor = true;
-            DilationButton.Click += DilationButton_Click;
+            dilationButton.Location = new Point(1254, 225);
+            dilationButton.Name = "dilationButton";
+            dilationButton.Size = new Size(111, 33);
+            dilationButton.TabIndex = 4;
+            dilationButton.Text = "dilation";
+            dilationButton.UseVisualStyleBackColor = true;
+            dilationButton.Click += DilationButton_Click;
             // 
-            // ErosionButton
+            // erosionButton
             // 
-            ErosionButton.Location = new Point(878, 159);
-            ErosionButton.Margin = new Padding(2);
-            ErosionButton.Name = "ErosionButton";
-            ErosionButton.Size = new Size(78, 20);
-            ErosionButton.TabIndex = 5;
-            ErosionButton.Text = "erosion";
-            ErosionButton.UseVisualStyleBackColor = true;
-            ErosionButton.Click += ErosionButton_Click;
+            erosionButton.Location = new Point(1254, 265);
+            erosionButton.Name = "erosionButton";
+            erosionButton.Size = new Size(111, 33);
+            erosionButton.TabIndex = 5;
+            erosionButton.Text = "erosion";
+            erosionButton.UseVisualStyleBackColor = true;
+            erosionButton.Click += ErosionButton_Click;
             // 
-            // OpenButton
+            // openButton
             // 
-            OpenButton.Location = new Point(779, 135);
-            OpenButton.Margin = new Padding(2);
-            OpenButton.Name = "OpenButton";
-            OpenButton.Size = new Size(78, 20);
-            OpenButton.TabIndex = 6;
-            OpenButton.Text = "opening";
-            OpenButton.UseVisualStyleBackColor = true;
-            OpenButton.Click += OpenButton_Click;
+            openButton.Location = new Point(1113, 225);
+            openButton.Name = "openButton";
+            openButton.Size = new Size(111, 33);
+            openButton.TabIndex = 6;
+            openButton.Text = "opening";
+            openButton.UseVisualStyleBackColor = true;
+            openButton.Click += OpenButton_Click;
             // 
-            // CloseButton
+            // closeButton
             // 
-            CloseButton.Location = new Point(779, 159);
-            CloseButton.Margin = new Padding(2);
-            CloseButton.Name = "CloseButton";
-            CloseButton.Size = new Size(78, 20);
-            CloseButton.TabIndex = 7;
-            CloseButton.Text = "closing";
-            CloseButton.UseVisualStyleBackColor = true;
-            CloseButton.Click += CloseButton_Click;
+            closeButton.Location = new Point(1113, 265);
+            closeButton.Name = "closeButton";
+            closeButton.Size = new Size(111, 33);
+            closeButton.TabIndex = 7;
+            closeButton.Text = "closing";
+            closeButton.UseVisualStyleBackColor = true;
+            closeButton.Click += CloseButton_Click;
             // 
-            // GradientButton
+            // gradientButton
             // 
-            GradientButton.Location = new Point(779, 183);
-            GradientButton.Margin = new Padding(2);
-            GradientButton.Name = "GradientButton";
-            GradientButton.Size = new Size(78, 20);
-            GradientButton.TabIndex = 8;
-            GradientButton.Text = "gradient";
-            GradientButton.UseVisualStyleBackColor = true;
-            GradientButton.Click += GradientButton_Click;
+            gradientButton.Location = new Point(1113, 305);
+            gradientButton.Name = "gradientButton";
+            gradientButton.Size = new Size(111, 33);
+            gradientButton.TabIndex = 8;
+            gradientButton.Text = "gradient";
+            gradientButton.UseVisualStyleBackColor = true;
+            gradientButton.Click += GradientButton_Click;
             // 
-            // TopHatButton
+            // topHatButton
             // 
-            TopHatButton.Location = new Point(697, 135);
-            TopHatButton.Margin = new Padding(2);
-            TopHatButton.Name = "TopHatButton";
-            TopHatButton.Size = new Size(78, 20);
-            TopHatButton.TabIndex = 9;
-            TopHatButton.Text = "TopHat";
-            TopHatButton.UseVisualStyleBackColor = true;
-            TopHatButton.Click += TopHatButton_Click;
+            topHatButton.Location = new Point(996, 225);
+            topHatButton.Name = "topHatButton";
+            topHatButton.Size = new Size(111, 33);
+            topHatButton.TabIndex = 9;
+            topHatButton.Text = "TopHat";
+            topHatButton.UseVisualStyleBackColor = true;
+            topHatButton.Click += TopHatButton_Click;
             // 
-            // BlackHatButton
+            // blackHatButton
             // 
-            BlackHatButton.Location = new Point(697, 159);
-            BlackHatButton.Margin = new Padding(2);
-            BlackHatButton.Name = "BlackHatButton";
-            BlackHatButton.Size = new Size(78, 20);
-            BlackHatButton.TabIndex = 10;
-            BlackHatButton.Text = "BlackHat";
-            BlackHatButton.UseVisualStyleBackColor = true;
-            BlackHatButton.Click += BlackHatButton_Click;
+            blackHatButton.Location = new Point(996, 265);
+            blackHatButton.Name = "blackHatButton";
+            blackHatButton.Size = new Size(111, 33);
+            blackHatButton.TabIndex = 10;
+            blackHatButton.Text = "BlackHat";
+            blackHatButton.UseVisualStyleBackColor = true;
+            blackHatButton.Click += BlackHatButton_Click;
             // 
-            // HitMissButton
+            // hitMissButton
             // 
-            HitMissButton.Location = new Point(697, 183);
-            HitMissButton.Margin = new Padding(2);
-            HitMissButton.Name = "HitMissButton";
-            HitMissButton.Size = new Size(78, 20);
-            HitMissButton.TabIndex = 11;
-            HitMissButton.Text = "HitMiss";
-            HitMissButton.UseVisualStyleBackColor = true;
-            HitMissButton.Click += HitMissButton_Click;
+            hitMissButton.Location = new Point(996, 305);
+            hitMissButton.Name = "hitMissButton";
+            hitMissButton.Size = new Size(111, 33);
+            hitMissButton.TabIndex = 11;
+            hitMissButton.Text = "HitMiss";
+            hitMissButton.UseVisualStyleBackColor = true;
+            hitMissButton.Click += HitMissButton_Click;
+            // 
+            // sobelDerivativeButton
+            // 
+            sobelDerivativeButton.Location = new Point(996, 18);
+            sobelDerivativeButton.Name = "sobelDerivativeButton";
+            sobelDerivativeButton.Size = new Size(111, 33);
+            sobelDerivativeButton.TabIndex = 12;
+            sobelDerivativeButton.Text = "Sobel";
+            sobelDerivativeButton.UseVisualStyleBackColor = true;
+            sobelDerivativeButton.Click += SobelDerivativeButton_Click;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(965, 434);
-            Controls.Add(HitMissButton);
-            Controls.Add(BlackHatButton);
-            Controls.Add(TopHatButton);
-            Controls.Add(GradientButton);
-            Controls.Add(CloseButton);
-            Controls.Add(OpenButton);
-            Controls.Add(ErosionButton);
-            Controls.Add(DilationButton);
-            Controls.Add(GrayButton);
-            Controls.Add(RevertButton);
+            ClientSize = new Size(1379, 723);
+            Controls.Add(sobelDerivativeButton);
+            Controls.Add(hitMissButton);
+            Controls.Add(blackHatButton);
+            Controls.Add(topHatButton);
+            Controls.Add(gradientButton);
+            Controls.Add(closeButton);
+            Controls.Add(openButton);
+            Controls.Add(erosionButton);
+            Controls.Add(dilationButton);
+            Controls.Add(grayButton);
+            Controls.Add(revertButton);
             Controls.Add(LoadBtn);
             Controls.Add(pictureBoxImage);
-            Margin = new Padding(2);
             Name = "Form1";
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)pictureBoxImage).EndInit();
@@ -202,15 +201,16 @@
 
         private PictureBox pictureBoxImage;
         private Button LoadBtn;
-        private Button RevertButton;
-        private Button GrayButton;
-        private Button DilationButton;
-        private Button ErosionButton;
-        private Button OpenButton;
-        private Button CloseButton;
-        private Button GradientButton;
-        private Button TopHatButton;
-        private Button BlackHatButton;
-        private Button HitMissButton;
+        private Button revertButton;
+        private Button grayButton;
+        private Button dilationButton;
+        private Button erosionButton;
+        private Button openButton;
+        private Button closeButton;
+        private Button gradientButton;
+        private Button topHatButton;
+        private Button blackHatButton;
+        private Button hitMissButton;
+        private Button sobelDerivativeButton;
     }
 }
