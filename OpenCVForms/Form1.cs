@@ -3,10 +3,10 @@ using OpenCvSharp.Extensions;
 using System.Diagnostics;
 namespace OpenCVForms
 {
-    public partial class Form1 : Form
+    public partial class form1 : Form
     {
         Mat image = new Mat();
-        public Form1()
+        public form1()
         {
             InitializeComponent();
 
@@ -31,7 +31,10 @@ namespace OpenCVForms
             #endregion
 
             #region 가장자리 검출 연산 버튼들
-            sobelDerivativeButton.Enabled = false;
+            sobelFilterButton.Enabled = false;
+            scharrFilterButton.Enabled = false;
+            LaplacianFilterButton.Enabled = false;
+            cannyEdgeFilterButton.Enabled = false;
             #endregion
         }
 
@@ -52,7 +55,10 @@ namespace OpenCVForms
             #endregion
 
             #region 가장자리 검출 연산 버튼들
-            sobelDerivativeButton.Enabled = true;
+            sobelFilterButton.Enabled = true;
+            scharrFilterButton.Enabled = true;
+            LaplacianFilterButton.Enabled = true;
+            cannyEdgeFilterButton.Enabled = true;
             #endregion
         }
 
@@ -248,7 +254,7 @@ namespace OpenCVForms
             kernel[0, 7, 0, 1] = Mat.Ones(new OpenCvSharp.Size(1, 7), MatType.CV_8U);
             kernel[0, 1, 0, 7] = Mat.Ones(new OpenCvSharp.Size(7, 1), MatType.CV_8U);
 
-            Cv2.MorphologyEx(grayImage, hitMissImage, MorphTypes.HitMiss, kernel, iterations:10);
+            Cv2.MorphologyEx(grayImage, hitMissImage, MorphTypes.HitMiss, kernel, iterations: 10);
 
             pictureBoxImage.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(hitMissImage);
 
@@ -274,7 +280,57 @@ namespace OpenCVForms
             dst.Dispose();
             grayImage.Dispose();
         }
+
+        private void scharrFilterButton_Click(object sender, EventArgs e)
+        {
+            Debug.Assert(image != null);
+
+            Mat grayImage = new Mat();
+            Cv2.CvtColor(image, grayImage, ColorConversionCodes.BGR2GRAY);
+
+            Mat dst = new Mat();
+            Cv2.Scharr(grayImage, dst, MatType.CV_8UC1, 1, 0);
+
+            pictureBoxImage.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(dst);
+
+            dst.Dispose();
+            grayImage.Dispose();
+        }
+
+        private void LaplacianFilterButton_Click(object sender, EventArgs e)
+        {
+            Debug.Assert(image != null);
+
+            Mat grayImage = new Mat();
+            Cv2.CvtColor(image, grayImage, ColorConversionCodes.BGR2GRAY);
+
+            Mat dst = new Mat();
+            Cv2.Laplacian(grayImage, dst, MatType.CV_8UC1);
+
+            pictureBoxImage.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(dst);
+
+            dst.Dispose();
+            grayImage.Dispose();
+        }
+
+        private void cannyEdgeFilterButton_Click(object sender, EventArgs e)
+        {
+            Debug.Assert(image != null);
+
+            Mat grayImage = new Mat();
+            Cv2.CvtColor(image, grayImage, ColorConversionCodes.BGR2GRAY);
+
+            Mat dst = new Mat();
+            Cv2.Canny(grayImage, dst, 50, 150);
+
+            pictureBoxImage.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(dst);
+
+            dst.Dispose();
+            grayImage.Dispose();
+        }
         #endregion
+
+
 
 
 
