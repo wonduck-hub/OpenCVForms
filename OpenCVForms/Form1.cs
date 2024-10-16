@@ -68,7 +68,6 @@ namespace OpenCVForms
             Debug.Assert(image != null);
 
             pictureBoxImage.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(image);
-
         }
 
         private void SetGrayButton_Click(object sender, EventArgs e)
@@ -79,6 +78,8 @@ namespace OpenCVForms
             Cv2.CvtColor(image, grayImage, ColorConversionCodes.BGR2GRAY);
 
             pictureBoxImage.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(grayImage);
+
+            grayImage.Dispose();
         }
         #endregion
 
@@ -96,6 +97,10 @@ namespace OpenCVForms
             Cv2.Dilate(grayImage, dilationImage, kernel);
 
             pictureBoxImage.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(dilationImage);
+
+            grayImage.Dispose();
+            dilationImage.Dispose();
+            kernel.Dispose();
         }
 
         private void ErosionButton_Click(object sender, EventArgs e)
@@ -112,6 +117,9 @@ namespace OpenCVForms
 
             pictureBoxImage.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(ErosoinImage);
 
+            grayImage.Dispose();
+            ErosoinImage.Dispose();
+            kernel.Dispose();
         }
         #endregion
 
@@ -129,6 +137,10 @@ namespace OpenCVForms
             Cv2.MorphologyEx(grayImage, openImage, MorphTypes.Open, kernel);
 
             pictureBoxImage.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(openImage);
+
+            grayImage.Dispose();
+            openImage.Dispose();
+            kernel.Dispose();
         }
 
         private void CloseButton_Click(object sender, EventArgs e)
@@ -144,6 +156,10 @@ namespace OpenCVForms
             Cv2.MorphologyEx(grayImage, closeImage, MorphTypes.Close, kernel);
 
             pictureBoxImage.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(closeImage);
+
+            grayImage.Dispose();
+            closeImage.Dispose();
+            kernel.Dispose();
         }
 
         private void GradientButton_Click(object sender, EventArgs e)
@@ -153,12 +169,16 @@ namespace OpenCVForms
             Mat grayImage = new Mat();
             Cv2.CvtColor(image, grayImage, ColorConversionCodes.BGR2GRAY);
 
-            Mat closeImage = new Mat();
+            Mat GradientImage = new Mat();
             Mat kernel = Cv2.GetStructuringElement(MorphShapes.Cross, new OpenCvSharp.Size(7, 7));
 
-            Cv2.MorphologyEx(grayImage, closeImage, MorphTypes.Gradient, kernel);
+            Cv2.MorphologyEx(grayImage, GradientImage, MorphTypes.Gradient, kernel);
 
-            pictureBoxImage.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(closeImage);
+            pictureBoxImage.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(GradientImage);
+
+            grayImage.Dispose();
+            GradientImage.Dispose();
+            kernel.Dispose();
         }
 
         private void TopHatButton_Click(object sender, EventArgs e)
@@ -168,12 +188,16 @@ namespace OpenCVForms
             Mat grayImage = new Mat();
             Cv2.CvtColor(image, grayImage, ColorConversionCodes.BGR2GRAY);
 
-            Mat closeImage = new Mat();
+            Mat topHatImage = new Mat();
             Mat kernel = Cv2.GetStructuringElement(MorphShapes.Cross, new OpenCvSharp.Size(7, 7));
 
-            Cv2.MorphologyEx(grayImage, closeImage, MorphTypes.TopHat, kernel);
+            Cv2.MorphologyEx(grayImage, topHatImage, MorphTypes.TopHat, kernel);
 
-            pictureBoxImage.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(closeImage);
+            pictureBoxImage.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(topHatImage);
+
+            grayImage.Dispose();
+            topHatImage.Dispose();
+            kernel.Dispose();
         }
 
         private void BlackHatButton_Click(object sender, EventArgs e)
@@ -183,12 +207,16 @@ namespace OpenCVForms
             Mat grayImage = new Mat();
             Cv2.CvtColor(image, grayImage, ColorConversionCodes.BGR2GRAY);
 
-            Mat closeImage = new Mat();
+            Mat blackHatImage = new Mat();
             Mat kernel = Cv2.GetStructuringElement(MorphShapes.Cross, new OpenCvSharp.Size(7, 7));
 
-            Cv2.MorphologyEx(grayImage, closeImage, MorphTypes.BlackHat, kernel);
+            Cv2.MorphologyEx(grayImage, blackHatImage, MorphTypes.BlackHat, kernel);
 
-            pictureBoxImage.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(closeImage);
+            pictureBoxImage.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(blackHatImage);
+
+            grayImage.Dispose();
+            blackHatImage.Dispose();
+            kernel.Dispose();
         }
 
         private void HitMissButton_Click(object sender, EventArgs e)
@@ -198,16 +226,20 @@ namespace OpenCVForms
             Mat grayImage = new Mat();
             Cv2.CvtColor(image, grayImage, ColorConversionCodes.BGR2GRAY);
 
-            Mat closeImage = new Mat();
+            Mat hitMissImage = new Mat();
 
             // 커널 메트릭스에서 0은 무시, 1은 유지를 한다.
             Mat kernel = Mat.Zeros(new OpenCvSharp.Size(7, 7), MatType.CV_8U);
             kernel[0, 7, 0, 1] = Mat.Ones(new OpenCvSharp.Size(1, 7), MatType.CV_8U);
             kernel[0, 1, 0, 7] = Mat.Ones(new OpenCvSharp.Size(7, 1), MatType.CV_8U);
 
-            Cv2.MorphologyEx(grayImage, closeImage, MorphTypes.HitMiss, kernel, iterations:10);
+            Cv2.MorphologyEx(grayImage, hitMissImage, MorphTypes.HitMiss, kernel, iterations:10);
 
-            pictureBoxImage.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(closeImage);
+            pictureBoxImage.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(hitMissImage);
+
+            grayImage.Dispose();
+            hitMissImage.Dispose();
+            kernel.Dispose();
         }
         #endregion
 
