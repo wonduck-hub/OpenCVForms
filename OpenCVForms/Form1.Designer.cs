@@ -42,27 +42,27 @@
             hitMissButton = new Button();
             sobelFilterButton = new Button();
             scharrFilterButton = new Button();
-            LaplacianFilterButton = new Button();
+            laplacianFilterButton = new Button();
             cannyEdgeFilterButton = new Button();
+            unsharpButton = new Button();
+            gaussianBlurButton = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBoxImage).BeginInit();
             SuspendLayout();
             // 
             // pictureBoxImage
             // 
-            pictureBoxImage.Location = new Point(17, 11);
-            pictureBoxImage.Margin = new Padding(2);
+            pictureBoxImage.Location = new Point(24, 18);
             pictureBoxImage.Name = "pictureBoxImage";
-            pictureBoxImage.Size = new Size(600, 342);
+            pictureBoxImage.Size = new Size(857, 570);
             pictureBoxImage.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxImage.TabIndex = 0;
             pictureBoxImage.TabStop = false;
             // 
             // LoadBtn
             // 
-            LoadBtn.Location = new Point(878, 11);
-            LoadBtn.Margin = new Padding(2);
+            LoadBtn.Location = new Point(1254, 18);
             LoadBtn.Name = "LoadBtn";
-            LoadBtn.Size = new Size(78, 20);
+            LoadBtn.Size = new Size(111, 33);
             LoadBtn.TabIndex = 1;
             LoadBtn.Text = "load btn";
             LoadBtn.UseVisualStyleBackColor = true;
@@ -70,10 +70,9 @@
             // 
             // revertButton
             // 
-            revertButton.Location = new Point(878, 35);
-            revertButton.Margin = new Padding(2);
+            revertButton.Location = new Point(1254, 58);
             revertButton.Name = "revertButton";
-            revertButton.Size = new Size(78, 20);
+            revertButton.Size = new Size(111, 33);
             revertButton.TabIndex = 2;
             revertButton.Text = "revert";
             revertButton.UseVisualStyleBackColor = true;
@@ -81,10 +80,9 @@
             // 
             // grayButton
             // 
-            grayButton.Location = new Point(878, 59);
-            grayButton.Margin = new Padding(2);
+            grayButton.Location = new Point(1254, 98);
             grayButton.Name = "grayButton";
-            grayButton.Size = new Size(78, 20);
+            grayButton.Size = new Size(111, 33);
             grayButton.TabIndex = 3;
             grayButton.Text = "gray";
             grayButton.UseVisualStyleBackColor = true;
@@ -92,10 +90,9 @@
             // 
             // dilationButton
             // 
-            dilationButton.Location = new Point(878, 135);
-            dilationButton.Margin = new Padding(2);
+            dilationButton.Location = new Point(1254, 225);
             dilationButton.Name = "dilationButton";
-            dilationButton.Size = new Size(78, 20);
+            dilationButton.Size = new Size(111, 33);
             dilationButton.TabIndex = 4;
             dilationButton.Text = "dilation";
             dilationButton.UseVisualStyleBackColor = true;
@@ -103,10 +100,9 @@
             // 
             // erosionButton
             // 
-            erosionButton.Location = new Point(878, 159);
-            erosionButton.Margin = new Padding(2);
+            erosionButton.Location = new Point(1254, 265);
             erosionButton.Name = "erosionButton";
-            erosionButton.Size = new Size(78, 20);
+            erosionButton.Size = new Size(111, 33);
             erosionButton.TabIndex = 5;
             erosionButton.Text = "erosion";
             erosionButton.UseVisualStyleBackColor = true;
@@ -114,10 +110,9 @@
             // 
             // openButton
             // 
-            openButton.Location = new Point(779, 135);
-            openButton.Margin = new Padding(2);
+            openButton.Location = new Point(1113, 225);
             openButton.Name = "openButton";
-            openButton.Size = new Size(78, 20);
+            openButton.Size = new Size(111, 33);
             openButton.TabIndex = 6;
             openButton.Text = "opening";
             openButton.UseVisualStyleBackColor = true;
@@ -125,10 +120,9 @@
             // 
             // closeButton
             // 
-            closeButton.Location = new Point(779, 159);
-            closeButton.Margin = new Padding(2);
+            closeButton.Location = new Point(1113, 265);
             closeButton.Name = "closeButton";
-            closeButton.Size = new Size(78, 20);
+            closeButton.Size = new Size(111, 33);
             closeButton.TabIndex = 7;
             closeButton.Text = "closing";
             closeButton.UseVisualStyleBackColor = true;
@@ -136,10 +130,9 @@
             // 
             // gradientButton
             // 
-            gradientButton.Location = new Point(779, 183);
-            gradientButton.Margin = new Padding(2);
+            gradientButton.Location = new Point(1113, 305);
             gradientButton.Name = "gradientButton";
-            gradientButton.Size = new Size(78, 20);
+            gradientButton.Size = new Size(111, 33);
             gradientButton.TabIndex = 8;
             gradientButton.Text = "gradient";
             gradientButton.UseVisualStyleBackColor = true;
@@ -147,10 +140,9 @@
             // 
             // topHatButton
             // 
-            topHatButton.Location = new Point(697, 135);
-            topHatButton.Margin = new Padding(2);
+            topHatButton.Location = new Point(996, 225);
             topHatButton.Name = "topHatButton";
-            topHatButton.Size = new Size(78, 20);
+            topHatButton.Size = new Size(111, 33);
             topHatButton.TabIndex = 9;
             topHatButton.Text = "TopHat";
             topHatButton.UseVisualStyleBackColor = true;
@@ -158,10 +150,9 @@
             // 
             // blackHatButton
             // 
-            blackHatButton.Location = new Point(697, 159);
-            blackHatButton.Margin = new Padding(2);
+            blackHatButton.Location = new Point(996, 265);
             blackHatButton.Name = "blackHatButton";
-            blackHatButton.Size = new Size(78, 20);
+            blackHatButton.Size = new Size(111, 33);
             blackHatButton.TabIndex = 10;
             blackHatButton.Text = "BlackHat";
             blackHatButton.UseVisualStyleBackColor = true;
@@ -169,10 +160,9 @@
             // 
             // hitMissButton
             // 
-            hitMissButton.Location = new Point(697, 183);
-            hitMissButton.Margin = new Padding(2);
+            hitMissButton.Location = new Point(996, 305);
             hitMissButton.Name = "hitMissButton";
-            hitMissButton.Size = new Size(78, 20);
+            hitMissButton.Size = new Size(111, 33);
             hitMissButton.TabIndex = 11;
             hitMissButton.Text = "HitMiss";
             hitMissButton.UseVisualStyleBackColor = true;
@@ -180,10 +170,9 @@
             // 
             // sobelFilterButton
             // 
-            sobelFilterButton.Location = new Point(779, 11);
-            sobelFilterButton.Margin = new Padding(2);
+            sobelFilterButton.Location = new Point(1113, 18);
             sobelFilterButton.Name = "sobelFilterButton";
-            sobelFilterButton.Size = new Size(78, 20);
+            sobelFilterButton.Size = new Size(111, 33);
             sobelFilterButton.TabIndex = 12;
             sobelFilterButton.Text = "Sobel";
             sobelFilterButton.UseVisualStyleBackColor = true;
@@ -191,44 +180,63 @@
             // 
             // scharrFilterButton
             // 
-            scharrFilterButton.Location = new Point(779, 35);
-            scharrFilterButton.Margin = new Padding(2);
+            scharrFilterButton.Location = new Point(1113, 58);
             scharrFilterButton.Name = "scharrFilterButton";
-            scharrFilterButton.Size = new Size(78, 20);
+            scharrFilterButton.Size = new Size(111, 33);
             scharrFilterButton.TabIndex = 13;
             scharrFilterButton.Text = "Scharr";
             scharrFilterButton.UseVisualStyleBackColor = true;
             scharrFilterButton.Click += scharrFilterButton_Click;
             // 
-            // LaplacianFilterButton
+            // laplacianFilterButton
             // 
-            LaplacianFilterButton.Location = new Point(779, 59);
-            LaplacianFilterButton.Margin = new Padding(2);
-            LaplacianFilterButton.Name = "LaplacianFilterButton";
-            LaplacianFilterButton.Size = new Size(78, 20);
-            LaplacianFilterButton.TabIndex = 14;
-            LaplacianFilterButton.Text = "Laplacian";
-            LaplacianFilterButton.UseVisualStyleBackColor = true;
-            LaplacianFilterButton.Click += LaplacianFilterButton_Click;
+            laplacianFilterButton.Location = new Point(1113, 98);
+            laplacianFilterButton.Name = "laplacianFilterButton";
+            laplacianFilterButton.Size = new Size(111, 33);
+            laplacianFilterButton.TabIndex = 14;
+            laplacianFilterButton.Text = "Laplacian";
+            laplacianFilterButton.UseVisualStyleBackColor = true;
+            laplacianFilterButton.Click += LaplacianFilterButton_Click;
             // 
             // cannyEdgeFilterButton
             // 
-            cannyEdgeFilterButton.Location = new Point(779, 83);
-            cannyEdgeFilterButton.Margin = new Padding(2);
+            cannyEdgeFilterButton.Location = new Point(1113, 138);
             cannyEdgeFilterButton.Name = "cannyEdgeFilterButton";
-            cannyEdgeFilterButton.Size = new Size(78, 20);
+            cannyEdgeFilterButton.Size = new Size(111, 33);
             cannyEdgeFilterButton.TabIndex = 15;
             cannyEdgeFilterButton.Text = "Canny edge";
             cannyEdgeFilterButton.UseVisualStyleBackColor = true;
             cannyEdgeFilterButton.Click += cannyEdgeFilterButton_Click;
             // 
+            // unsharpButton
+            // 
+            unsharpButton.Location = new Point(887, 137);
+            unsharpButton.Name = "unsharpButton";
+            unsharpButton.Size = new Size(112, 34);
+            unsharpButton.TabIndex = 16;
+            unsharpButton.Text = "Unsharp";
+            unsharpButton.UseVisualStyleBackColor = true;
+            unsharpButton.Click += unsharpButton_Click;
+            // 
+            // gaussianBlurButton
+            // 
+            gaussianBlurButton.Location = new Point(887, 97);
+            gaussianBlurButton.Name = "gaussianBlurButton";
+            gaussianBlurButton.Size = new Size(112, 34);
+            gaussianBlurButton.TabIndex = 17;
+            gaussianBlurButton.Text = "Gaussian";
+            gaussianBlurButton.UseVisualStyleBackColor = true;
+            gaussianBlurButton.Click += gaussianBlurButton_Click;
+            // 
             // form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(965, 434);
+            ClientSize = new Size(1379, 723);
+            Controls.Add(gaussianBlurButton);
+            Controls.Add(unsharpButton);
             Controls.Add(cannyEdgeFilterButton);
-            Controls.Add(LaplacianFilterButton);
+            Controls.Add(laplacianFilterButton);
             Controls.Add(scharrFilterButton);
             Controls.Add(sobelFilterButton);
             Controls.Add(hitMissButton);
@@ -243,7 +251,6 @@
             Controls.Add(revertButton);
             Controls.Add(LoadBtn);
             Controls.Add(pictureBoxImage);
-            Margin = new Padding(2);
             Name = "form1";
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)pictureBoxImage).EndInit();
@@ -266,7 +273,9 @@
         private Button hitMissButton;
         private Button sobelFilterButton;
         private Button scharrFilterButton;
-        private Button LaplacianFilterButton;
+        private Button laplacianFilterButton;
         private Button cannyEdgeFilterButton;
+        private Button unsharpButton;
+        private Button gaussianBlurButton;
     }
 }

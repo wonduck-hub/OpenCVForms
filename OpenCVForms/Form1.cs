@@ -1,6 +1,7 @@
 using OpenCvSharp;
 using OpenCvSharp.Extensions;
 using System.Diagnostics;
+using System.Security.Cryptography;
 namespace OpenCVForms
 {
     public partial class form1 : Form
@@ -33,9 +34,12 @@ namespace OpenCVForms
             #region 가장자리 검출 연산 버튼들
             sobelFilterButton.Enabled = false;
             scharrFilterButton.Enabled = false;
-            LaplacianFilterButton.Enabled = false;
+            laplacianFilterButton.Enabled = false;
             cannyEdgeFilterButton.Enabled = false;
             #endregion
+
+            gaussianBlurButton.Enabled = false;
+            unsharpButton.Enabled = false;
         }
 
         private void ActivateButton()
@@ -57,9 +61,12 @@ namespace OpenCVForms
             #region 가장자리 검출 연산 버튼들
             sobelFilterButton.Enabled = true;
             scharrFilterButton.Enabled = true;
-            LaplacianFilterButton.Enabled = true;
+            laplacianFilterButton.Enabled = true;
             cannyEdgeFilterButton.Enabled = true;
             #endregion
+
+            gaussianBlurButton.Enabled = true;
+            unsharpButton.Enabled = true;
         }
 
         #region 파일 로드, 원본 표시, 회색조
@@ -334,5 +341,33 @@ namespace OpenCVForms
 
 
 
+        private void unsharpButton_Click(object sender, EventArgs e)
+        {
+            Debug.Assert(image != null);
+
+            Mat gImg = new Mat();
+            Cv2.GaussianBlur(image, gImg, new OpenCvSharp.Size(7, 7), 1, 1);
+
+            Mat mask = image - gImg;
+            Mat dst = mask + image; 
+
+            pictureBoxImage.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(dst);
+
+            gImg.Dispose();
+            mask.Dispose();
+            dst.Dispose();
+        }
+
+        private void gaussianBlurButton_Click(object sender, EventArgs e)
+        {
+            Debug.Assert(image != null);
+
+            Mat gImg = new Mat();
+            Cv2.GaussianBlur(image, gImg, new OpenCvSharp.Size(7, 7), 1, 1);
+
+            pictureBoxImage.Image = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(gImg);
+
+            gImg.Dispose();
+        }
     }
 }
